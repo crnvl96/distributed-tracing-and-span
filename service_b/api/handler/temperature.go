@@ -12,7 +12,7 @@ import (
 )
 
 type Body struct {
-	Zipcode string `json:"zipcode"`
+	Cep string `json:"cep"`
 }
 
 func CalculateTemperature(w http.ResponseWriter, r *http.Request) {
@@ -49,7 +49,7 @@ func CalculateTemperature(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	addr, err := internal.GetZipCode(body.Zipcode, ctx)
+	addr, err := internal.GetZipCode(body.Cep, ctx)
 
 	if *addr == (internal.Address{}) {
 		http.Error(w, "can not find zipcode", http.StatusNotFound)

@@ -8,7 +8,7 @@ import (
 )
 
 type RequestData struct {
-	ZipCode string `json:"zipcode"`
+	Cep string `json:"cep"`
 }
 
 func ValidateZipCode(w http.ResponseWriter, r *http.Request) {
@@ -19,7 +19,7 @@ func ValidateZipCode(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if !brdoc.IsCEP(body.ZipCode) {
+	if !brdoc.IsCEP(body.Cep) {
 		http.Error(w, "invalid zipcode", http.StatusUnprocessableEntity)
 		return
 	}
