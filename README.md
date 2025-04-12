@@ -1,33 +1,7 @@
-# distributed-tracing-and-span
+# Distributed tracing and span
 
-## Exemplo
-```json
-http://localhost:8081/zipcode
-Body: { "cep": "10010100" }
+Small project that simulates some observability features, using Go.
 
-```
-```json
-{
-  "temp_C": 29.1,
-  "temp_F": 84.4,
-  "temp_K": 302.1,
-  "city": "Belém"
-}
-```
-## Dependências
+This has been coded during a post-graduation that I've done in Go, and its not really meant to be a project to be used daily.
 
-[weather api key](https://www.weatherapi.com/)
-
-## Execução
-
-```bash
-git clone https://github.com/crnvl96/distributed-tracing-and-span.git
-cd distributed-tracing-and-span
-cd service_b
-go mod download
-cp .env.example .env
-cd ../service_a
-go mod download
-cd ..
-docker compose up -d
-```
+The code is here for future reference from me or anyone who needs it.
